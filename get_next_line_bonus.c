@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include <unistd.h>
 
 char	*ft_read_to_left_str(int fd, char *left_str)
 {
