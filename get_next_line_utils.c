@@ -115,11 +115,9 @@ char	*ft_new_left_str(char *left_str)
 	str = (char *)malloc(sizeof(char) * (ft_strlen(left_str) - i));
 	if (!str)
 		return (NULL);
-	i++;
-	j = 0;
-	while (left_str[i])
-		str[j++] = left_str[i++];
-	str[j] = '\0';
+	j = ft_strlen(left_str + i);
+	ft_memmove(str, left_str + i, j - 1);
+	str[j - 1] = '\0';
 	free(left_str);
 	return (str);
 }
@@ -142,18 +140,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	while (len--)
 		*d++ = *s++;
 	return (dst);
-}
-
-char	*ft_realloc(char *s, size_t n)
-{
-	char	*res;
-
-	res = (char *)malloc(n * sizeof(char));
-	if (!res)
-		return (NULL);
-	res = ft_memmove(res, s, ft_strlen(s));
-	free(s);
-	return (res);
 }
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
