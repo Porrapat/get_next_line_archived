@@ -22,6 +22,7 @@ char	*ft_read_to_left_str(int fd, char *left_str)
 		return (NULL);
 	rd_bytes = 1;
 	while (!ft_strchr(left_str, '\n') && rd_bytes != 0)
+	// while (!ft_strnstr(left_str, "\n", ft_strlen(left_str)) && rd_bytes != 0)
 	{
 		rd_bytes = read(fd, buff, BUFFER_SIZE);
 		if (rd_bytes == -1)
@@ -30,6 +31,7 @@ char	*ft_read_to_left_str(int fd, char *left_str)
 			return (NULL);
 		}
 		buff[rd_bytes] = '\0';
+		// ft_strlcat(left_str, buff, ft_strlen(left_str) + ft_strlen(buff) + 1);
 		left_str = ft_strjoin(left_str, buff);
 	}
 	free(buff);

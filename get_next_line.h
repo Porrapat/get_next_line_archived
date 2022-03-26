@@ -28,4 +28,9 @@ size_t	ft_strlen(const char *s);
 char	*ft_get_line(char *left_str);
 char	*ft_new_left_str(char *left_str);
 
+void		*ft_memmove(void *dst, const void *src, size_t len);
+char		*ft_realloc(char *s, size_t n);
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
 #endif
