@@ -51,7 +51,7 @@ char	*ft_read_to_left_str(int fd, char *left_str)
 		}
 		buff[rd_bytes] = '\0';
 		// ft_strlcat(left_str, buff, ft_strlen(left_str) + ft_strlen(buff) + 1);
-		left_str = ft_strjoin(left_str, buff);
+		left_str = ft_strmycat(left_str, buff);
 		ret = check_left_str(left_str);
 	}
 	free(buff);
